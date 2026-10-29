@@ -1,0 +1,14 @@
+version: 1
+applications:
+  demo-events:
+    name: "Demo Events"
+    type: gunicorn
+    script: app:app
+    subdomain: demo-events
+    git_version:
+      preprod: main
+      prod: v1.0.0
+    requirements: requirements.txt
+    gunicorn_settings:
+      workers: 1
+      timeout: 30
